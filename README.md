@@ -1,9 +1,9 @@
 # Internship-UserEx
 Contains all my projects which I did during my Internship at UserEx.
 
-First Month
+## First Month
 
-Week - 1
+### Week - 1
 
 HTML
 Create your own Resume in HTML
@@ -23,15 +23,15 @@ Apna College : HTML Tutorial for Beginners | Complete HTML with Notes & Code
 
 
 
-Week - 2
+## Week - 2
 
-CSS
+### CSS
 Create HTML page with CSS of given UI page Design
 
-Tailwind CSS
+### Tailwind CSS
 Use Tailwind CSS in created HTML page
 
-Resources:
+### Resources:
 	Css:
 Code With Harry : CSS Tutorial In Hindi (With Notes) 🔥
 
@@ -42,7 +42,7 @@ Code With Harry : Tailwind CSS in one Video | Sigma Web Development Course - Tut
 
 
 
-Week - 3
+## Week - 3
 
 JavaScript
 Learn Basic of JavaScript
@@ -54,31 +54,31 @@ Functions
 Precedence order
 objects
 
-Test Exam
+## Test Exam
 Give test exam on given questionnaire
 
-Resources:
+### Resources:
 	Code With Harry (videos 1 to 51) : Introduction to JavaScript + Setup | JavaScript Tutorial in Hindi #1
 
 
 
 
-Week - 4
+## Week - 4
 
-Project
+### Project
 Create an Informative website with multiple pages with given UI
 No Backend involved
 
-Monthly Review
+### Monthly Review
 Review about your project and work experience
 
 
 
 
 
-Second Month
+## Second Month
 
-Week - 1
+## Week - 1
 
 Advance JavaScript
 Learn from Videos
@@ -94,9 +94,9 @@ Local storage
 Math library
 
 SQL (Basic)
-Note : We are using SQL server ,not mysql
+### Note : We are using SQL server ,not mysql
 
-Learn Basic of SQL
+### Learn Basic of SQL
 Data types
 Primary key , foreign key , composite key
 Select query
@@ -104,10 +104,10 @@ Update query
 Delete query
 Where , and , or , order by , distinct , like , in , between ……
 
-Test Exam
+### Test Exam
 Give test exam on given questionnaire
 
-Resources:
+### Resources:
 	JS:
 Code With Harry (video 52 to end): Introduction to JavaScript + Setup | JavaScript Tutorial in Hindi #1
 	SQL:
@@ -115,7 +115,7 @@ Intellipaat : SQL Training | SQL Tutorial | Intellipaat
 
 
 
-Week - 2
+## Week - 2
 
 Node js
 Learn from Videos
@@ -134,7 +134,7 @@ Postman
 Check Backend on postman
 No Frontend involved
 
-Resources:
+### Resources:
 	Node:
 Code With Harry : Node Js Tutorial in Hindi 🔥🔥
 Anson the Developer : Express JS Full Course
@@ -149,25 +149,25 @@ Hitesh Chaudhary (hindi) : How to use postman for backend
 
 
 
-Week - 3
+## Week - 3
 
-React js
+## React js
 Learn from Videos
 Learn logics
 No External Libraries involved
 
-Test Exam
+### Test Exam
 Give test exam on given questionnaire
 
 
-Resources:
+### Resources:
 	React :
 Code With Harry (videos 1 to 21 , 41 to end) : Introduction to React Js + Installation | Complete React Course in Hindi #1
 Hitesh Chaudhary (videos 1 to 15) : React JS roadmap | chai aur react series
 
 
 
-Week - 4
+## Week - 4
 
 React js Project with Libraries
 Create Project connecting backend you have created
@@ -176,11 +176,11 @@ React Hook Form
 Redux
 TanStack Query
 
-Monthly Review
+### Monthly Review
 Review about your project and work experience
 
 
-Resources:
+### Resources:
 	Redux : Hitesh Chaudhary : Redux toolkit crash course | Chai aur React Series
 	React hook form : hitesh chaudhary : How to use React hook form in production
 	Tanstack Query : React Query - Full Tutorial 2024 🔥🔥
@@ -188,6 +188,6 @@ Resources:
 
 
 
-Third Month
+## Third Month
 
 A Complete project where Frontend, Backend, React or React Native, TS will involved
