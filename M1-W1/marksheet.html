@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shrey's Marksheet</title>
+    <title> Shrey's Marksheet</title>
     <style>
-       #tab1,#tab1 th, #tab1 td {
-          border-collapse: collapse;
+        *{
+            box-sizing: border-box;
         }
-        
+        *, *:before, *:after {
+            box-sizing: inherit;
+          }
         #tab2, #tab2 th, #tab2 td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -27,45 +29,58 @@
             width: 100%;
         }
 
+        #tab5 th, #tab5 td{
+            width: auto;
+        }
+
+        #tab5, #tab5 th, #tab5 td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+
+        #tab5 th, #tab5 td{
+            padding: 10px;
+        }
+
         #tab2 th {
             width: 5%;
+        }
+
+        body{
+            padding: 50px;
+            border: 2px solid black
+        }
+
+        img>h1,h2,h3{
+            margin: 0;
+            padding: 0;
+        }
+
+        th:first-child{
+            background-color: rgb(244, 236, 236);
         }
         </style>
 </head>
 <body>
-    <table id="tab1">
-        <tr>
-            <th rowspan="4">
-                <img src="/M1-W1/images-3.png" alt="" style="height: 150px; width: 150px;">
-            </th>
-            <td>
-                <h1>GUJARAT TECHNOLOGICAL UNIVERSITY</h1>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <h3 style="text-align: center">
-                    (NAAC Accredited A*)
-                </h3>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-            <h3 style="text-align: center">
+    <div style="text-align: center; display: flex; align-items: center; justify-content: center; margin-right: 60px;">
+        <img src="/images-3.png" alt="" style="height: 150px; width: 150px; margin-right: 10px;">
+        <div>
+            <h1 style="flex-grow: 100%;">
+                Gujarat Technological University
+            </h1>
+            <h3>
+                (NAAC Accredited A*)
+            </h3>
+            <h3>
                 Ahmedabad, INDIA
-                </h3>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-            <h3 style="text-align: center">
+            </h3>
+            <h3>
                 Semester Grade Report
-                </h3>
-            </td>
-        </tr>
-    </table>
+            </h3>
+        </div>
+    </div>
     <br>
     <br>
 
@@ -118,7 +133,7 @@
 
     <table id="tab2">
         <tr>
-            <th>
+            <th style="width:5%; height:auto">
                 Course
             </th>
             <th>
@@ -128,12 +143,12 @@
                Branch Code
             </th>
         </tr>
-        <tr>
-            <td>
+        <tr style="text-align:center;">
+            <td style="padding:10px; width:auto">
                 BACHELOR OF ENGINEERING
             </td>
             <td>
-                COMPUTER SCIENCE & ENGINEERING (ARTIFICIAL
+                COMPUTER SCIENCE & ENGINEERING (ARTIFICIAL <br>
 INTELLIGENCE AND MACHINE LEARNING)
             </td>
             <td>
@@ -143,12 +158,14 @@ INTELLIGENCE AND MACHINE LEARNING)
     </table>
 <br>
 
-<table id="tab2">
-    <tr colspan="1">
-        <th>
-            Student's Name
-        </th>
-    </tr>
+<table id="tab2" style="text-align: center;">
+    <thead>
+        <tr colspan="1">
+            <th>
+                Student's Name
+            </th>
+        </tr>
+    </thead>
     <tr>
         <td>
             SHREY AMITKUMAR SHAH
@@ -163,7 +180,7 @@ INTELLIGENCE AND MACHINE LEARNING)
             <th style="width: 25%;">
             Enrolment No. (New)/<br> Seat No.
             </th>
-            <td style="width: 25%;">
+            <td style="width: 25%; text-align: center;">
                211310142052
             </td>
             <th style="width: 25%;">
@@ -176,7 +193,10 @@ INTELLIGENCE AND MACHINE LEARNING)
     </table>
 <br>
 
-<table id="tab2">
+<table id="tab5">
+    <colgroup>
+        <col span="1" style="width: auto;">
+    </colgroup>
     <tr>
         <th rowspan="2">
             Subject <br>
@@ -206,13 +226,13 @@ INTELLIGENCE AND MACHINE LEARNING)
         
     </tr>
     <tr>
-        <th>
+        <th style="background-color: rgb(255, 255, 255);">
             ESE
         </th>
         <th>
             PA
         </th>
-        <th>
+        <th style="background-color: rgb(255, 255, 255);">
             ESE
         </th>
         <th>
@@ -468,7 +488,7 @@ INTELLIGENCE AND MACHINE LEARNING)
 
 <table id="tab4">
     <tr>
-        <th rowspan="2">
+        <th rowspan="2" style="width: 5%;">
             Backlog
         </th>
         <th>
@@ -590,6 +610,6 @@ INTELLIGENCE AND MACHINE LEARNING)
 </table>
 <br><br>
 
-<img src="/M1-W1/Screenshot 2025-01-06 at 13.57.56.png" alt="" style="width: 100%;">
+<img src="/Screenshot 2025-01-06 at 13.57.56.png" alt="" style="width: 100%;">
 </body>
 </html>
