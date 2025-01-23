@@ -1,0 +1,18 @@
+import '/src/css/Navbar.css';
+// import Button from '/src/pages/Button.jsx'
+
+function Navbar() {
+  return (
+    <>
+        {/* <Button /> */}
+        <nav className="navbar">
+           <button><a href="/">Home</a></button> 
+           <button><a href="/counter">Counter</a></button> 
+           <button><a href="/todo">ToDolist</a></button> 
+           <button><a href="/stopwatch">Stop Watch</a></button> 
+        </nav>
+    </>
+  )
+}
+
+export default Navbar
