@@ -3,6 +3,31 @@
     padding: 1rem;
 }
 
-.timer>button{
-    
+button{
+    margin: 0.5rem;
+}
+
+p{
+    margin: 10px;
+}
+
+.resourceType{
+    display: flex;
+    font-size: 25px;
+}
+
+.resourceType>h3{
+    margin: 0.5rem;
+}
+
+.resourceType>select{
+    margin: 0.5rem;
+    font-size: 20px;
+}
+
+.selected{
+    background-color: #d8969696;
+    max-width: 15rem;
+    display: flex;
+    font-size: 20px;
 }

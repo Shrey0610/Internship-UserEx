@@ -44,6 +44,7 @@ export default function App() {
       <UserGreeting isLoggedIn={true} username='Shrey' />
       <Navbar />
       <RouterProvider router={router} />
+      <br />
       <Footer />
     </div>
   )

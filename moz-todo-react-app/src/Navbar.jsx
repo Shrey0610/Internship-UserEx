@@ -7,7 +7,7 @@ function Navbar() {
         {/* <Button /> */}
         <nav className="navbar">
            <button><a href="/">Home</a></button> 
-           <button><a href="/counter">Counter</a></button> 
+           <button><a href="/counter">Fetch</a></button> 
            <button><a href="/todo">ToDolist</a></button> 
            <button><a href="/stopwatch">Stop Watch</a></button> 
         </nav>
