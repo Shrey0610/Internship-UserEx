@@ -16,4 +16,9 @@ export default defineConfig({
   },
 },
   plugins: [react()],
+  resolve: {
+    alias: {
+      'ag-grid-community/dist/styles': 'ag-grid-community/styles'
+    }
+  }
 })

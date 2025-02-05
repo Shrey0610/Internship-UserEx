@@ -4,6 +4,7 @@ import Counter from '/src/pages/Counter.jsx'
 import StopWatch from '/src/pages/StopWatch.jsx'
 import ToDolist from '/src/pages/ToDolist.jsx'
 import UserGreeting from '/src/pages/UserGreeting.jsx'
+import HookForm from './pages/HookForm.jsx'
 // import List from '/src/pages/List.jsx'
 
 import Navbar from './Navbar.jsx'
@@ -36,6 +37,10 @@ export default function App() {
       {
         path: '/stopwatch', 
         element: <StopWatch />
+      },
+      {
+        path: '/form', 
+        element: <HookForm />
       },
     ]
   );

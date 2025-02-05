@@ -10,6 +10,7 @@ function Navbar() {
            <button><a href="/counter">Fetch</a></button> 
            <button><a href="/todo">ToDolist</a></button> 
            <button><a href="/stopwatch">Stop Watch</a></button> 
+           <button><a href="/form">Hook Form</a></button> 
         </nav>
     </>
   )
