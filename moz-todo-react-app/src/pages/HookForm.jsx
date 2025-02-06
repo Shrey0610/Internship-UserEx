@@ -207,15 +207,28 @@ import "/src/css/grid.css";
 
 // Validation Schema
 const schema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email format"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
+    name: z.string().min(1, "Name is required"),
+    username: z.string().min(1, "Username is required"),
+    email: z.string().email("Invalid email format"),
+    password: z.string().min(6, "Password must be at least 6 characters"),
+    phoneNumbers: z.array(z.number().min(1, "Phone number is required")).min(2, "At least two phone numbers are required"),
 });
 
 export default function HookForm() {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm({
+  const { register, watch, getValues, handleSubmit, formState: { errors, isSubmitting, isDirty, isValid }, reset } = useForm({
     resolver: zodResolver(schema),
+    defaultValues: {
+        name: "John Doe",
+        username: "Shrey",
+        email: "admin@example.com",
+        password: "1111111",
+        phoneNumbers: [11,22],
+    },
+    mode: 'all',
   });
+
+console.log({isDirty, isValid});
+  // console.log({touchedFields, dirtyFields});
 
   const gridRef = useRef();
   const [rowData, setRowData] = useState([...ROWDATA]); // Combine predefined & form data
@@ -224,9 +237,50 @@ export default function HookForm() {
   const onSubmit = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setRowData((prevData) => [...prevData, data]); // Append form data to grid
-    reset(); // Reset form fields
+    // console.log(data);
   };
 
+  const handleGetValues= async()=>{
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+     console.log('Got Password:', getValues('password'));
+  }
+              //Throw an error if the user clicks on the 'Reset Values' button only after the form has been submitted:
+              // const handleSetValues = () => {
+              //   if (isSubmitting) {
+              //     throw new Error("Cannot reset values while submitting form");
+              //   }
+              //   setValue("name", "", {
+              //     shouldValidate: true,
+              //     shouldDirty: true,
+              //     shouldTouch: true,
+              //   });
+              //   setValue("password", "", {
+              //     shouldValidate: true,
+              //     shouldDirty: true,
+              //     shouldTouch: true,
+              //   });
+              //   setValue("email", "", {
+              //     shouldValidate: true,
+              //     shouldDirty: true,
+              //     shouldTouch: true,
+              //   });
+              //   setValue("username", "", {
+              //     shouldValidate: true,
+              //     shouldDirty: true,
+              //     shouldTouch: true,
+              //   });
+              //   setValue("phoneNumbers[0]", "", {
+              //     shouldValidate: true,
+              //     shouldDirty: true,
+              //     shouldTouch: true,
+              //   });
+              //   setValue("phoneNumbers[1]", "", {
+              //     shouldValidate: true,
+              //     shouldDirty: true,
+              //     shouldTouch: true,
+              //   });
+              // }
+              
   // Column Definitions
   const columnDefs = [
     { field: "id", headerName: "ID", checkboxSelection: true, sortable: true, resizable: true, Selection: true, editable: true, },
@@ -244,15 +298,33 @@ export default function HookForm() {
     passwordInput.type = passwordInput.type === "password" ? "text" : "password";
   };
 
+  const watchName = watch("name");
+//   const watchForm = watch();
+
+//   useEffect(()=>{
+//     const subscription= watch((value)=>{console.log(value)});
+//     return ()=>subscription.unsubscribe();
+//   }, [watch])
+
   return (
     <div style={{ width: "100%", padding: "20px" }}>
+        <h2>Welcome {watchName}!</h2>
       {/* Form Section */}
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <input {...register("name")} type="text" placeholder="Name" />
-        {errors.name && <div style={{ color: "red" }}>{errors.name.message}</div>}
+        {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
+
+        <input {...register("username")} type="text" placeholder="Username" />
+        {errors.username && <p style={{ color: "red" }}>{errors.username.message}</p>}
 
         <input {...register("email")} type="text" placeholder="Email" />
-        {errors.email && <div style={{ color: "red" }}>{errors.email.message}</div>}
+        {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
+
+        <input {...register("phoneNumbers[0]")} type="number" id='pr-phone' placeholder="P Phone" />
+        {errors.phoneNumbers && <p style={{ color: "red" }}>{errors.phoneNumbers.message}</p>}
+
+        <input {...register("phoneNumbers[1]",{valueAsNumber: true})} type="number" id= 'sec-phone' placeholder="S Phone" />
+        {errors.phoneNumbers && <p style={{ color: "red" }}>{errors.phoneNumbers.message}</p>}
 
         <div className="input-container">
           <input {...register("password")} id="password" type="password" placeholder="Password" />
@@ -262,9 +334,12 @@ export default function HookForm() {
         </div>
         {errors.password && <div style={{ color: "red" }}>{errors.password.message}</div>}
 
-        <button type="submit" disabled={isSubmitting}>
+        <button type="submit" disabled={isSubmitting || !isDirty}>
           {isSubmitting ? "Loading..." : "Submit"}
         </button>
+        <button type="button" onClick={handleGetValues}>Get Values</button>
+        <button type="button" onClick={()=>reset()}>Reset Values</button>
+        
       </form>
 
       {/* Grid Section */}
@@ -275,6 +350,7 @@ export default function HookForm() {
           columnDefs={columnDefs}
           pagination={true}
           domLayout="autoHeight"
+        paginationPageSize={10}
         />
       </div>
     </div>
